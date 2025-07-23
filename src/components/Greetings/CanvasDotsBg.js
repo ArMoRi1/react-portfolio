@@ -72,7 +72,11 @@ const CanvasDotsBg = () => {
 
                 const opacity = Math.max(0.1, Math.min(1, 1 - distanceRatio));
 
-                ctx.fillStyle = this.colour.replace('rgb', 'rgba').replace(')', `, ${opacity})`);
+                // const rgb = this.colour.match(/\d+/g); // ['81', '162', '233']
+                // const alpha = Math.max(0.2, 1 - distanceRatio); // прозорість
+                // ctx.fillStyle = `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${alpha})`; // БЕЗ пробілів!
+                ctx.fillStyle = this.colour; // просто без альфи
+
                 ctx.fill();
             },
 
