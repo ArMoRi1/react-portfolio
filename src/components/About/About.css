@@ -101,16 +101,32 @@
 }
 
 .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 140px);
-    gap: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    /*align-items: flex-;*/
+}
+
+.tech-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.tech-column.col-3 {
+    /* Перша і третя колонки по 3 елементи - опускаємо їх */
+    margin-top: 70px;
+}
+
+.tech-column.col-4 {
+    /* Друга колонка по 4 елементи - залишається зверху */
 }
 
 .tech-item {
     border: 2px solid;
     border-image: linear-gradient(135deg, #61dafb, #ff4d5a) 1;
-    padding: 1rem;
-    border-radius: 10px;
+    padding: 0.8rem;
+    border-radius: 15%;
     text-align: center;
     font-weight: 600;
     letter-spacing: 1px;
@@ -118,6 +134,12 @@
     transition: transform 0.3s ease, background 0.3s ease;
     animation: fadeInUp 0.5s ease forwards;
     opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
 }
 
 .tech-item:hover {
@@ -125,25 +147,32 @@
     background: #252525;
 }
 
+.tech-icon {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 0.3rem;
+    object-fit: contain;
+}
+
 .tech-label {
     display: block;
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
-/* Simple fade animation */
+/* Анімації */
 @keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Responsive */
+/* Респонсивний дизайн */
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
