@@ -1,5 +1,4 @@
 import React from 'react';
-import { scrollToSection } from '../../Utils/smoothScroll';
 import './About.css';
 
 const About = () => {
