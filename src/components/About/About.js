@@ -24,9 +24,11 @@ const About = () => {
                     <div className="about-left">
                         <div className="profile-avatar">
                             <div className="avatar-head">
-                                <img src="./public/photos/Art.jpg" alt=""/>
+
                             </div>
-                            <div className="avatar-body"></div>
+                            <div className="avatar-body">
+                                <img src="./photos/Art.jpg" alt=""/>
+                            </div>
                         </div>
 
                         <div className="about-description">
