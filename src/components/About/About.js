@@ -23,7 +23,9 @@ const About = () => {
                     {/* Ліва частина - профіль і опис */}
                     <div className="about-left">
                         <div className="profile-avatar">
-                            <div className="avatar-head"></div>
+                            <div className="avatar-head">
+                                <img src="./public/photos/Art.jpg" alt=""/>
+                            </div>
                             <div className="avatar-body"></div>
                         </div>
 
