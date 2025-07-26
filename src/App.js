@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from '../src/components/Navigation/Navigation';
 import Greetings from '../src/components/Greetings/Greetings';
 import About from '../src/components/About/About';
-// import Projects from '../src/components/Projects';
+import Projects from '../src/components/Projects/Projects';
 // import Contact from '../src/components/Contact';
 // import Footer from '../src/components/Footer';
 import './App.css';
@@ -21,9 +21,9 @@ function App() {
                 <About />
             </section>
 
-            {/*<section id="projects" className="section">*/}
-            {/*    <ProjectsSection />*/}
-            {/*</section>*/}
+            <section id="projects" className="section">
+                <Projects />
+            </section>
 
             {/*<section id="contact" className="section">*/}
             {/*    <ContactSection />*/}
