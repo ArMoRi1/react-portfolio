@@ -1,4 +1,5 @@
 import React from 'react';
+import { scrollToSection } from '../../Utils/smoothScroll';
 import './About.css';
 
 const About = () => {
@@ -33,14 +34,18 @@ const About = () => {
 
                         <div className="about-description">
                             <p>
-                                Fully committed to the philosophy of life-long
-                                learning, I'm a full stack developer with a deep passion
-                                for JavaScript, React and all things web development.
-                                The unique combination of creativity, logic,
-                                technology and never running out of new things to
-                                discover, drives my excitement and passion for web
-                                development. When I'm not at my computer I like to
-                                spend my time reading, keeping fit and playing guitar.
+                                Fresh full-stack developer with solid knowledge
+                                in JavaScript, React, and modern web technologies,
+                                ready to turn theory into real-world impact.
+                                I'm hungry for experience and determined to prove
+                                myself in every project I touch. My passion for
+                                learning never stops - I constantly dive into new
+                                frameworks and push my skills to the next level.
+                                When I'm not coding, I'm wrestling, crushing
+                                workouts, learning new languages, or exploring
+                                the wilderness. I may be new to the industry,
+                                but my drive and dedication speak louder than
+                                years of experience.
                             </p>
                         </div>
                     </div>
