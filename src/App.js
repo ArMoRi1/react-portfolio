@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from '../src/components/Navigation/Navigation';
 import Greetings from '../src/components/Greetings/Greetings';
-// import About from '../src/components/About';
+import About from '../src/components/About/About';
 // import Projects from '../src/components/Projects';
 // import Contact from '../src/components/Contact';
 // import Footer from '../src/components/Footer';
@@ -17,9 +17,9 @@ function App() {
                 <Greetings />
             </section>
 
-            {/*<section id="about" className="section">*/}
-            {/*    <AboutSection />*/}
-            {/*</section>*/}
+            <section id="about" className="section">
+                <About />
+            </section>
 
             {/*<section id="projects" className="section">*/}
             {/*    <ProjectsSection />*/}

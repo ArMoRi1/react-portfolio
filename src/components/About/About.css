@@ -1,0 +1,156 @@
+/* About.css */
+
+.about-section {
+    background-color: #0f0f0f;
+    color: #ffffff;
+    padding: 4rem 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-title h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #fff;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+}
+
+.about-title h2::after {
+    content: '';
+    width: 60%;
+    height: 8px;
+    background: #ff4d5a;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    gap: 3rem;
+    justify-content: space-between;
+}
+
+.about-left {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #61dafb, #ff4d5a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.avatar-body {
+    width: 140px;
+    height: 140px;
+    border: 3px solid #0f0f0f;
+    border-radius: 50%;
+    background: transparent;
+    position: relative;
+}
+
+.avatar-body::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 120px;
+    height: 60px;
+    transform: translateX(-50%);
+    border: 3px solid #ff4d5a;
+    border-top: none;
+    border-radius: 0 0 80px 80px;
+}
+
+.about-description {
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #e0e0e0;
+    max-width: 500px;
+}
+
+.about-right {
+    flex: 1 1 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 140px);
+    gap: 1.2rem;
+}
+
+.tech-item {
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #61dafb, #ff4d5a) 1;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease, background 0.3s ease;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+    background: #252525;
+}
+
+.tech-label {
+    display: block;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Simple fade animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 120px);
+    }
+}
