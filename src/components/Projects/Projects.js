@@ -63,7 +63,7 @@ const Projects = () => {
             description: "The simplest site about travel tours",
             githubLink: "https://github.com/ArMoRi1/travel.local",
             webLink : "https://travelin.great-site.net/",
-            image: "./project-images/Smart_garbage.jpg",
+            image: "./project-images/TravelIn.jpg",
             technologies: ["JavaScript", "PHP", "SQL", "phpMyAdmin"]
         },
         {
