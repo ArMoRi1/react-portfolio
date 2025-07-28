@@ -4,7 +4,7 @@ import Greetings from '../src/components/Greetings/Greetings';
 import About from '../src/components/About/About';
 import Projects from '../src/components/Projects/Projects';
 import Contact from '../src/components/Contact/Contact';
-// import Footer from '../src/components/Footer';
+import Footer from '../src/components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -29,9 +29,7 @@ function App() {
                 <Contact />
             </section>
 
-            {/*/!* Additional sections that might not be in main navigation *!/*/}
-            {/*<MenuSection />*/}
-            {/*<FooterSection />*/}
+            <Footer />
         </div>
     );
 }
