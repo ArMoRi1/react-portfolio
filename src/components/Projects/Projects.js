@@ -81,7 +81,7 @@ const Projects = () => {
             description: "Simple translator app",
             githubLink: "https://github.com/ArMoRi1/TranslateRT",
             webLink : "https://armori1.github.io/TranslateRT/",
-            image: "./project-images/real-earth.jpg",
+            image: "./project-images/TranslateRT.jpg",
             technologies: ["JavaScript", "API", "CSS"]
         }
     ];
