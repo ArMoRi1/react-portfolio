@@ -137,13 +137,15 @@
 
 .project-technologies {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 15%;
     margin-bottom: 1rem;
 }
 
 .tech-tag {
+    display: flex;
+    justify-content: center;
     background: rgba(97, 218, 251, 0.2);
     color: #61dafb;
     padding: 0.3rem 0.8rem;
