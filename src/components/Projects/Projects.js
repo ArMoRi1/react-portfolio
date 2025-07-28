@@ -27,7 +27,7 @@ const Projects = () => {
             description: "It is a simple conversion app for self-usage",
             githubLink: "https://github.com/ArMoRi1/react-currency-conversion",
             webLink : "https://armori1.github.io/react-currency-conversion/",
-            image: "/project-images/currency-conversion.jpg",
+            image: "./project-images/currency-conversion.jpg",
             technologies: ["ReactJS", "JavaScript", "API"]
         },
         {

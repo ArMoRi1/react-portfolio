@@ -27,7 +27,7 @@ const About = () => {
 
                             </div>
                             <div className="avatar-body">
-                                <img src="/public/photos/Art.jpg" alt=""/>
+                                <img src="./public/photos/Art.jpg" alt="the pic of an author"/>
                             </div>
                         </div>
 
