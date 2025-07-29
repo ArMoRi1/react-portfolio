@@ -23,11 +23,8 @@ const About = () => {
                     {/* Ліва частина - профіль і опис */}
                     <div className="about-left">
                         <div className="profile-avatar">
-                            <div className="avatar-head">
-
-                            </div>
                             <div className="avatar-body">
-                                <img src="./photos/Art.jpg" alt="the pic of an author"/>
+                                <img src={`${process.env.PUBLIC_URL}/photos/Art.jpg`} alt="the pic of an author"/>
                             </div>
                         </div>
 
@@ -61,7 +58,7 @@ const About = () => {
                                         style={{ animationDelay: `${index * 0.1}s` }}
                                     >
                                         <img
-                                            src={`./tech-icons/${tech.name.toLowerCase()}.png`}
+                                            src={`${process.env.PUBLIC_URL}/tech-icons/${tech.name.toLowerCase()}.png`}
                                             alt={tech.name}
                                             className="tech-icon"
                                         />
@@ -79,7 +76,7 @@ const About = () => {
                                         style={{ animationDelay: `${(index + 3) * 0.1}s` }}
                                     >
                                         <img
-                                            src={`./tech-icons/${tech.name.toLowerCase()}.png`}
+                                            src={`${process.env.PUBLIC_URL}/tech-icons/${tech.name.toLowerCase()}.png`}
                                             alt={tech.name}
                                             className="tech-icon"
                                         />
@@ -97,7 +94,7 @@ const About = () => {
                                         style={{ animationDelay: `${(index + 7) * 0.1}s` }}
                                     >
                                         <img
-                                            src={`./tech-icons/${tech.name.toLowerCase()}.png`}
+                                            src={`${process.env.PUBLIC_URL}/tech-icons/${tech.name.toLowerCase()}.png`}
                                             alt={tech.name}
                                             className="tech-icon"
                                         />

@@ -9,7 +9,7 @@ const Projects = () => {
             description: "It is Solar system model",
             githubLink: "https://github.com/ArMoRi1/react-solar-system",
             webLink : "https://armori1.github.io/react-solar-system/",
-            image: "./project-images/solar-system.jpg",
+            image: `${process.env.PUBLIC_URL}/project-images/solar-system.jpg`,
             technologies: ["ReactJS", "JavaScript", "ThreeJS", "API"]
         },
         {
@@ -18,7 +18,7 @@ const Projects = () => {
             description: "Company employee accounting app for everyone`s usage",
             githubLink: "https://github.com/ArMoRi1/react-employees",
             webLink : "https://armori1.github.io/react-employees/",
-            image: "./project-images/react-employees.jpg",
+            image: `${process.env.PUBLIC_URL}/project-images/react-employees.jpg`,
             technologies: ["ReactJS", "JavaScript", "SASS"]
         },
         {
@@ -27,7 +27,7 @@ const Projects = () => {
             description: "It is a simple conversion app for self-usage",
             githubLink: "https://github.com/ArMoRi1/react-currency-conversion",
             webLink : "https://armori1.github.io/react-currency-conversion/",
-            image: "./project-images/currency-conversion.jpg",
+            image: `${process.env.PUBLIC_URL}/project-images/currency-conversion.jpg`,
             technologies: ["ReactJS", "JavaScript", "API"]
         },
         {
@@ -36,7 +36,7 @@ const Projects = () => {
             description: "Restaurant advertising website",
             githubLink: "https://github.com/ArMoRi1/Restraunt",
             webLink : "https://armori1.github.io/Restraunt/",
-            image: "./project-images/Restraunt.jpg",
+            image: `${process.env.PUBLIC_URL}/project-images/Restraunt.jpg`,
             technologies: ["JavaScript", "HTML", "CSS"]
         },
         {
@@ -45,7 +45,7 @@ const Projects = () => {
             description: "It is my first store app for my first job as a programmer",
             githubLink: "https://github.com/ArMoRi1/furniture.local",
             webLink : "https://furniture-comfort.is-great.net/",
-            image: "./project-images/Furniture-Store.jpg",
+            image: `${process.env.PUBLIC_URL}/project-images/Furniture-Store.jpg`,
             technologies: ["JavaScript", "PHP", "phpMyAdmin", "SQL"]
         },
         {
@@ -54,7 +54,7 @@ const Projects = () => {
             description: "It was an idea of a start-up what was presented on a All-Ukrainian competition",
             githubLink: "https://github.com/ArMoRi1/Smart_garbage",
             webLink : "https://smart-trash.great-site.net/",
-            image: "./project-images/Smart_garbage.jpg",
+            image: `${process.env.PUBLIC_URL}/project-images/Smart_garbage.jpg`,
             technologies: ["JavaScript", "API", "PHP", "SQL"]
         },
         {
@@ -63,7 +63,7 @@ const Projects = () => {
             description: "The simplest site about travel tours",
             githubLink: "https://github.com/ArMoRi1/travel.local",
             webLink : "https://travelin.great-site.net/",
-            image: "./project-images/TravelIn.jpg",
+            image: `${process.env.PUBLIC_URL}/project-images/TravelIn.jpg`,
             technologies: ["JavaScript", "PHP", "SQL", "phpMyAdmin"]
         },
         {
@@ -72,7 +72,7 @@ const Projects = () => {
             description: "Basic ThreeJS project that represents planet Earth",
             githubLink: "https://github.com/ArMoRi1/real-earth/",
             webLink : "https://armori1.github.io/real-earth/",
-            image: "./project-images/real-earth.jpg",
+            image: `${process.env.PUBLIC_URL}/project-images/real-earth.jpg`,
             technologies: ["JavaScript", "ThreeJS", "CSS"]
         },
         {
@@ -81,7 +81,7 @@ const Projects = () => {
             description: "Simple translator app",
             githubLink: "https://github.com/ArMoRi1/TranslateRT",
             webLink : "https://armori1.github.io/TranslateRT/",
-            image: "./project-images/TranslateRT.jpg",
+            image: `${process.env.PUBLIC_URL}/project-images/TranslateRT.jpg`,
             technologies: ["JavaScript", "API", "CSS"]
         }
     ];

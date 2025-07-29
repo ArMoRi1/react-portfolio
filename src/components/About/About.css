@@ -83,19 +83,6 @@
     border-radius: 50%;
 }
 
-.avatar-body::after {
-    content: '';
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    width: 120px;
-    height: 60px;
-    transform: translateX(-50%);
-    border: 3px solid #ff4d5a;
-    border-top: none;
-    border-radius: 0 0 80px 80px;
-}
-
 .about-description {
     text-align: center;
     line-height: 1.6;
