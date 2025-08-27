@@ -92,18 +92,6 @@
     display: none;
 }
 
-/* Індикатор активної секції знизу */
-/*.nav-link.active::after {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    bottom: 0;*/
-/*    left: 50%;*/
-/*    transform: translateX(-50%);*/
-/*    width: 40px;*/
-/*    height: 3px;*/
-/*    background-color: #ffffff;*/
-/*    border-radius: 2px 2px 0 0;*/
-/*}*/
 
 /* Фокус для доступності */
 .nav-link:focus {

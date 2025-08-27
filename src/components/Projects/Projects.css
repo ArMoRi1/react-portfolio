@@ -46,7 +46,6 @@
 
 .project-card {
     background: #1a1a1a;
-    border-radius: 15px;
     border: 2px solid;
     border-image: linear-gradient(135deg, #61dafb, #ff4d5a) 1;
     overflow: hidden;
