@@ -7,22 +7,22 @@ const Footer = () => {
     const socialLinks = [
         {
             name: 'GitHub',
-            url: 'https://github.com/your-username',
+            url: 'https://github.com/ArMoRi1',
             icon: '⚫', // GitHub icon
         },
         {
             name: 'LinkedIn',
-            url: 'https://linkedin.com/in/your-profile',
+            url: 'https://www.linkedin.com/in/artem-mochalovv/',
             icon: '💼', // LinkedIn icon
         },
         {
             name: 'Instagram',
-            url: 'https://instagram.com/your-username',
+            url: 'https://www.instagram.com/_.moxitoo/',
             icon: '📷', // Instagram icon
         },
         {
             name: 'Email',
-            url: 'mailto:your.email@example.com',
+            url: 'mailto:artemmochalov445@gmail.com',
             icon: '✉️', // Email icon
         }
     ];

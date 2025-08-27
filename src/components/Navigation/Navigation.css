@@ -33,6 +33,7 @@
     margin: 0;
     height: 60px;
     flex: 1;
+    position: relative;
 }
 
 .nav-link {
@@ -45,22 +46,73 @@
     cursor: pointer;
     padding: 0;
     border-radius: 0;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     font-family: inherit;
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ефект підсвітки при hover */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
 }
 
 .nav-link:hover {
     color: #ffffff;
+    transform: translateY(-1px);
 }
 
+/* Активний стан */
 .nav-link.active {
     color: #ffffff;
     background-color: #ff6b6b;
+    transform: none;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.nav-link.active::before {
+    display: none;
+}
+
+/* Індикатор активної секції знизу */
+/*.nav-link.active::after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%);*/
+/*    width: 40px;*/
+/*    height: 3px;*/
+/*    background-color: #ffffff;*/
+/*    border-radius: 2px 2px 0 0;*/
+/*}*/
+
+/* Фокус для доступності */
+.nav-link:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+.nav-link:focus:not(:focus-visible) {
+    outline: none;
 }
 
 /* Mobile styles */
@@ -72,10 +124,43 @@
     .nav-link {
         font-size: 14px;
     }
+
+    .nav-link.active::after {
+        width: 30px;
+        height: 2px;
+    }
 }
 
 @media (max-width: 480px) {
     .nav-link {
         font-size: 13px;
+        font-weight: 400;
+    }
+
+    .nav-link.active::after {
+        width: 25px;
+    }
+}
+
+/* Анімації появи */
+@media (prefers-reduced-motion: no-preference) {
+    .nav-item {
+        animation: fadeInUp 0.5s ease backwards;
+    }
+
+    .nav-item:nth-child(1) { animation-delay: 0.1s; }
+    .nav-item:nth-child(2) { animation-delay: 0.2s; }
+    .nav-item:nth-child(3) { animation-delay: 0.3s; }
+    .nav-item:nth-child(4) { animation-delay: 0.4s; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
