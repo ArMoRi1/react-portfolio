@@ -56,7 +56,6 @@ const Footer = () => {
                     {/* Ліва частина - Інформація */}
                     {/* Ліва частина - Інформація */}
                     <div className="footer-left">
-                        <h4>I am</h4>
                         <h3 className="footer-name">Artem Mochalov</h3>
                         <p className="footer-title">Full Stack Developer</p>
                         <p className="footer-description">
