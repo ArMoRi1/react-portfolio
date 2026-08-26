@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
-    const form = useRef();
+    const form = useRef<HTMLFormElement>(null);
     const [formData, setFormData] = useState({
         from_name: '',
         from_email: '',
@@ -12,7 +12,7 @@ const Contact = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState('');
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
             ...prevState,
@@ -20,39 +20,36 @@ const Contact = () => {
         }));
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
         setStatus('');
 
         try {
             const result = await emailjs.sendForm(
-                'service_ArtPortfolio',     // ✅ ЗАМІНІТЬ НА ВАШ SERVICE ID
-                'template_ArtPortfolio',    // ✅ ЗАМІНІТЬ НА ВАШ TEMPLATE ID
-                form.current,
-                '4oz-FDBfb7C1j37cy'         // ✅ ЗАМІНІТЬ НА ВАШ PUBLIC KEY
+                'service_ArtPortfolio',
+                'template_ArtPortfolio',
+                form.current!,
+                '4oz-FDBfb7C1j37cy'
             );
 
             console.log('Email sent successfully:', result.text);
             setStatus('success');
 
-            // Очищуємо форму після успішної відправки
             setFormData({
                 from_name: '',
                 from_email: '',
                 message: ''
             });
 
-            // Сховати повідомлення через 5 секунд
             setTimeout(() => {
                 setStatus('');
             }, 5000);
 
         } catch (error) {
-            console.error('Failed to send email:', error.text);
+            console.error('Failed to send email:', (error as { text?: string }).text);
             setStatus('error');
 
-            // Сховати повідомлення про помилку через 5 секунд
             setTimeout(() => {
                 setStatus('');
             }, 5000);
@@ -104,7 +101,7 @@ const Contact = () => {
                             value={formData.message}
                             onChange={handleInputChange}
                             required
-                            rows="6"
+                            rows={6}
                             className="form-textarea"
                         />
                     </div>

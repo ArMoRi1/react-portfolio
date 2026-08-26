@@ -6,7 +6,7 @@ const Navigation = () => {
     const [activeSection, setActiveSection] = useState('home');
 
     // Handle navigation click
-    const handleNavClick = (sectionId) => {
+    const handleNavClick = (sectionId: string) => {
         scrollToSection(sectionId, setActiveSection);
     };
 

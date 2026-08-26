@@ -1,10 +1,10 @@
 import React from 'react';
-import Navigation from '../src/components/Navigation/Navigation';
-import Greetings from '../src/components/Greetings/Greetings';
-import About from '../src/components/About/About';
-import Projects from '../src/components/Projects/Projects';
-import Contact from '../src/components/Contact/Contact';
-import Footer from '../src/components/Footer/Footer';
+import Navigation from './components/Navigation/Navigation';
+import Greetings from './components/Greetings/Greetings';
+import About from './components/About/About';
+import Projects from './components/Projects/Projects';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
