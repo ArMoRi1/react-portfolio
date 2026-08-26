@@ -6,13 +6,18 @@ const About = () => {
         { name: 'HTML', color: '#E34F26' },
         { name: 'JS', color: '#F7DF1E' },
         { name: 'CSS', color: '#1572B6' },
-        { name: 'SASS', color: '#CC6699' },
+        { name: 'TAILWIND', color: '#06B6D4' },
         { name: 'REACT', color: '#61DAFB' },
-        { name: 'PHP', color: '#777BB4' },
-        { name: 'PHPMYADMIN', color: '#6C78AF' },
+        { name: 'TYPESCRIPT', color: '#3178C6' },
         { name: 'GIT', color: '#F05032' },
         { name: 'THREEJS', color: '#000000' },
-        { name: 'MYSQL', color: '#4479A1' }
+        { name: 'MYSQL', color: '#4479A1' },
+        { name: 'POSTGRES', color: '#336791' },
+        { name: 'PYTHON', color: '#3776AB' },
+        { name: 'DJANGO', color: '#092E20' },
+        { name: 'DRF', color: '#A30000' },
+        { name: 'NGINX', color: '#009639' },
+        { name: 'GITHUBACTIONS', color: '#2088FF' }
     ];
 
     return (
@@ -24,7 +29,7 @@ const About = () => {
                     <div className="about-left">
                         <div className="profile-avatar">
                             <div className="avatar-body">
-                                <img src={`${process.env.PUBLIC_URL}/photos/Art.jpg`} alt="the pic of an author"/>
+                                <img src={`${import.meta.env.BASE_URL}photos/Art.jpg`} alt="the pic of an author"/>
                             </div>
                         </div>
 
@@ -49,16 +54,16 @@ const About = () => {
                     {/* Права частина - технології */}
                     <div className="about-right">
                         <div className="tech-grid">
-                            {/* Перша колонка - 3 елементи */}
-                            <div className="tech-column col-3">
-                                {technologies.slice(0, 3).map((tech, index) => (
+                            {/* Перша колонка - 4 елементи */}
+                            <div className="tech-column col-4">
+                                {technologies.slice(0, 5).map((tech, index) => (
                                     <div
                                         key={tech.name}
                                         className="tech-item"
                                         style={{ animationDelay: `${index * 0.1}s` }}
                                     >
                                         <img
-                                            src={`${process.env.PUBLIC_URL}/tech-icons/${tech.name.toLowerCase()}.png`}
+                                            src={`${import.meta.env.BASE_URL}tech-icons/${tech.name.toLowerCase()}.png`}
                                             alt={tech.name}
                                             className="tech-icon"
                                         />
@@ -69,14 +74,14 @@ const About = () => {
 
                             {/* Друга колонка - 4 елементи */}
                             <div className="tech-column col-4">
-                                {technologies.slice(3, 7).map((tech, index) => (
+                                {technologies.slice(5, 10).map((tech, index) => (
                                     <div
                                         key={tech.name}
                                         className="tech-item"
                                         style={{ animationDelay: `${(index + 3) * 0.1}s` }}
                                     >
                                         <img
-                                            src={`${process.env.PUBLIC_URL}/tech-icons/${tech.name.toLowerCase()}.png`}
+                                            src={`${import.meta.env.BASE_URL}tech-icons/${tech.name.toLowerCase()}.png`}
                                             alt={tech.name}
                                             className="tech-icon"
                                         />
@@ -85,16 +90,16 @@ const About = () => {
                                 ))}
                             </div>
 
-                            {/* Третя колонка - 3 елементи */}
-                            <div className="tech-column col-3">
-                                {technologies.slice(7, 10).map((tech, index) => (
+                            {/* Третя колонка - 4 елементи */}
+                            <div className="tech-column col-4">
+                                {technologies.slice(10, 15).map((tech, index) => (
                                     <div
                                         key={tech.name}
                                         className="tech-item"
                                         style={{ animationDelay: `${(index + 7) * 0.1}s` }}
                                     >
                                         <img
-                                            src={`${process.env.PUBLIC_URL}/tech-icons/${tech.name.toLowerCase()}.png`}
+                                            src={`${import.meta.env.BASE_URL}tech-icons/${tech.name.toLowerCase()}.png`}
                                             alt={tech.name}
                                             className="tech-icon"
                                         />
