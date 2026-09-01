@@ -6,7 +6,6 @@
     padding: 4rem 2rem 2rem;
     font-family: 'Segoe UI', sans-serif;
     border-top: 1px solid #222;
-    margin-top: 4rem;
 }
 
 .footer-container {
@@ -182,7 +181,6 @@
 
     .footer-section {
         padding: 2.5rem 1rem 1.5rem;
-        margin-top: 2rem;
     }
 
     .footer-left {
@@ -246,7 +244,6 @@
 @media (max-width: 480px) {
     .footer-section {
         padding: 2rem 1rem 1rem;
-        margin-top: 1.5rem;
     }
 
     .footer-name {
