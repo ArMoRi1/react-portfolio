@@ -1,11 +1,12 @@
 /* Footer.css */
 
 .footer-section {
-    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    background: #0f0f0f;
     color: #ffffff;
-    padding: 3rem 2rem 1rem;
+    padding: 4rem 2rem 2rem;
     font-family: 'Segoe UI', sans-serif;
-    border-top: 1px solid #333;
+    border-top: 1px solid #222;
+    margin-top: 4rem;
 }
 
 .footer-container {
@@ -15,27 +16,16 @@
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 2rem;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
     align-items: start;
 }
 
-/* Ліва частина */
+/* Ліва частина - Інформація */
 .footer-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-height: 200px;
-    justify-content: flex-start;
-}
-
-.footer-left h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: #fff;
-    font-weight: 600;
-    text-align: center;
 }
 
 .footer-name {
@@ -45,38 +35,36 @@
     background: linear-gradient(135deg, #61dafb, #ff4d5a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /*background-clip: text;*/
 }
 
 .footer-title {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: #ff4d5a;
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .footer-description {
-    color: #ccc;
+    color: #999;
     line-height: 1.6;
-    max-width: 300px;
-    text-align: center;
+    font-size: 0.95rem;
 }
 
-/* Центр - Швидкі посилання */
+/* Центр - Навігація */
 .footer-center {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-height: 200px;
-    justify-content: flex-start;
 }
 
 .footer-center h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
     color: #fff;
     font-weight: 600;
-    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .footer-links {
@@ -85,187 +73,125 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 0.8rem;
 }
 
-.footer-links li {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
 .footer-link {
-    color: #ccc;
+    color: #999;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     font-size: 0.95rem;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    display: inline-block;
-    min-width: 80px;
-    text-align: center;
     position: relative;
 }
 
 .footer-link:hover {
     color: #61dafb;
-    background: rgba(97, 218, 251, 0.1);
-    border-color: rgba(97, 218, 251, 0.2);
-    transform: translateY(-2px);
 }
 
-.footer-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #61dafb, #ff4d5a);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.footer-link:hover::before {
-    width: 100%;
-}
-
-/* Права частина - Соцмережі */
+/* Права частина - Контакти */
 .footer-right {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-height: 200px;
-    justify-content: flex-start;
 }
 
 .footer-right h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
     color: #fff;
     font-weight: 600;
-    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .social-links {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
-    align-items: center;
+    gap: 1rem;
 }
 
 .social-link {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    color: #ccc;
+    justify-content: space-between;
+    color: #999;
     text-decoration: none;
     transition: all 0.3s ease;
-    padding: 0.5rem;
-    border-radius: 8px;
-    border: 1px solid transparent;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #222;
 }
 
 .social-link:hover {
     color: #61dafb;
-    background: rgba(97, 218, 251, 0.1);
-    border-color: rgba(97, 218, 251, 0.2);
-    transform: translateX(5px);
-}
-
-.social-icon {
-    font-size: 1.2rem;
-    width: 24px;
-    text-align: center;
+    border-bottom-color: #61dafb;
 }
 
 .social-name {
     font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.social-arrow {
+    color: #444;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover .social-arrow {
+    color: #61dafb;
+    transform: translateX(4px);
 }
 
 /* Нижня частина */
 .footer-bottom {
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .footer-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, #333, transparent);
-    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, transparent, #222, transparent);
+    margin-bottom: 2rem;
 }
 
 .footer-copyright {
     text-align: center;
-    color: #888;
-}
-
-.footer-copyright p {
-    margin: 0.5rem 0;
+    color: #666;
     font-size: 0.9rem;
 }
 
-.footer-note {
-    font-size: 0.85rem !important;
-    color: #666 !important;
+.footer-copyright p {
+    margin: 0;
 }
 
 /* Респонсивний дизайн */
-@media (max-width: 968px) {
+@media (max-width: 1024px) {
     .footer-content {
-        grid-template-rows:1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 2rem;
     }
 
-    .footer-left {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .footer-center ul{
-        flex-wrap: nowrap;
-    }
-
-    .footer-center, .footer-right{
-        min-height: auto;
+    .footer-section {
+        padding: 3rem 1.5rem 2rem;
     }
 }
 
-@media (max-width: 640px) {
-    .footer-section {
-        padding: 2rem 1rem 1rem;
-    }
-
+@media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .footer-section {
+        padding: 2.5rem 1rem 1.5rem;
+        margin-top: 2rem;
     }
 
     .footer-left {
-        grid-column: auto;
+        text-align: center;
     }
 
-    .footer-description {
-        max-width: none;
-    }
-
-    .social-links {
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .social-link {
-        flex-direction: column;
-        gap: 0.3rem;
-        padding: 0.8rem;
-        min-width: 80px;
-    }
-
-    .social-name {
-        font-size: 0.8rem;
+    .footer-center h4,
+    .footer-right h4 {
+        font-size: 0.9rem;
     }
 
     .footer-links {
@@ -276,15 +202,70 @@
     }
 
     .footer-link {
-        min-width: 60px;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+        border-bottom: none;
+        padding: 0.5rem 1rem;
+        border: 1px solid #222;
+        border-radius: 4px;
+    }
+
+    .footer-link:hover {
+        border-color: #61dafb;
+    }
+
+    .social-links {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .social-link {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3rem;
+        padding: 0.8rem 1rem;
+        border: 1px solid #222;
+        border-radius: 4px;
+        border-bottom: 1px solid #222;
+    }
+
+    .social-link:hover {
+        border-bottom-color: #61dafb;
+    }
+
+    .social-name {
+        font-size: 0.85rem;
+    }
+
+    .social-arrow {
+        display: none;
     }
 }
 
 @media (max-width: 480px) {
+    .footer-section {
+        padding: 2rem 1rem 1rem;
+        margin-top: 1.5rem;
+    }
+
     .footer-name {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .footer-center h4,
+    .footer-right h4 {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-links {
+        gap: 0.5rem;
+    }
+
+    .footer-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
     }
 
     .social-links {
@@ -292,17 +273,15 @@
     }
 
     .social-link {
-        min-width: 70px;
         padding: 0.6rem;
+        font-size: 0.8rem;
     }
 
-    .footer-links {
-        gap: 0.8rem;
+    .footer-divider {
+        margin-bottom: 1rem;
     }
 
-    .footer-link {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.85rem;
-        min-width: 50px;
+    .footer-copyright {
+        font-size: 0.8rem;
     }
 }

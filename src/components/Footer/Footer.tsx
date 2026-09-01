@@ -8,22 +8,17 @@ const Footer = () => {
         {
             name: 'GitHub',
             url: 'https://github.com/ArMoRi1',
-            icon: '⚫', // GitHub icon
+            symbol: '→'
         },
         {
             name: 'LinkedIn',
             url: 'https://www.linkedin.com/in/artem-mochalovv/',
-            icon: '💼', // LinkedIn icon
-        },
-        {
-            name: 'Instagram',
-            url: 'https://www.instagram.com/_.moxitoo/',
-            icon: '📷', // Instagram icon
+            symbol: '→'
         },
         {
             name: 'Email',
             url: 'mailto:artemmochalov445@gmail.com',
-            icon: '✉️', // Email icon
+            symbol: '→'
         }
     ];
 
@@ -38,10 +33,18 @@ const Footer = () => {
         <footer className="footer-section">
             <div className="footer-container">
                 <div className="footer-content">
+                    {/* Ліва частина - Інформація */}
+                    <div className="footer-left">
+                        <h3 className="footer-name">Artem Mochalov</h3>
+                        <p className="footer-title">Full Stack Developer</p>
+                        <p className="footer-description">
+                            Crafting digital solutions with modern technologies.
+                        </p>
+                    </div>
 
-                    {/* Центр - Швидкі посилання */}
+                    {/* Центр - Навігація */}
                     <div className="footer-center">
-                        <h4>Quick Links</h4>
+                        <h4>Navigation</h4>
                         <ul className="footer-links">
                             {quickLinks.map((link, index) => (
                                 <li key={index}>
@@ -53,21 +56,9 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Ліва частина - Інформація */}
-                    {/* Ліва частина - Інформація */}
-                    <div className="footer-left">
-                        <h3 className="footer-name">Artem Mochalov</h3>
-                        <p className="footer-title">Full Stack Developer</p>
-                        <p className="footer-description">
-                            Building digital experiences with passion and precision.
-                        </p>
-                    </div>
-
-
-
-                    {/* Права частина - Соцмережі */}
+                    {/* Права частина - Контакти */}
                     <div className="footer-right">
-                        <h4>Connect</h4>
+                        <h4>Get in Touch</h4>
                         <div className="social-links">
                             {socialLinks.map((social, index) => (
                                 <a
@@ -78,8 +69,8 @@ const Footer = () => {
                                     className="social-link"
                                     title={social.name}
                                 >
-                                    <span className="social-icon">{social.icon}</span>
                                     <span className="social-name">{social.name}</span>
+                                    <span className="social-arrow">{social.symbol}</span>
                                 </a>
                             ))}
                         </div>
@@ -91,9 +82,6 @@ const Footer = () => {
                     <div className="footer-divider"></div>
                     <div className="footer-copyright">
                         <p>&copy; {currentYear} Artem Mochalov. All rights reserved.</p>
-                        <p className="footer-note">
-                            Made with ❤️ and lots of ☕
-                        </p>
                     </div>
                 </div>
             </div>

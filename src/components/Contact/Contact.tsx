@@ -1,5 +1,13 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import {
+    sanitizeInput,
+    validateFormData,
+    checkRateLimit,
+    getRateLimitTimeRemaining,
+    type ValidationErrors,
+    type RateLimitState
+} from '../../Utils/formSecurity';
 import './Contact.css';
 
 const Contact = () => {
@@ -11,21 +19,65 @@ const Contact = () => {
     });
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState('');
+    const [errors, setErrors] = useState<ValidationErrors>({});
+    const [rateLimitState, setRateLimitState] = useState<RateLimitState>(() => {
+        const stored = localStorage.getItem('formRateLimit');
+        return stored ? JSON.parse(stored) : { count: 0, resetTime: 0 };
+    });
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
+        const sanitized = sanitizeInput(value);
+
         setFormData(prevState => ({
             ...prevState,
-            [name]: value
+            [name]: sanitized
         }));
+
+        // Видалити помилку поля при редагуванні
+        if (errors[name as keyof ValidationErrors]) {
+            setErrors(prev => ({
+                ...prev,
+                [name]: undefined
+            }));
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setIsLoading(true);
+        setErrors({});
         setStatus('');
 
+        // Перевірка rate limit
+        const { allowed, newState } = checkRateLimit(rateLimitState);
+        if (!allowed) {
+            setRateLimitState(newState);
+            localStorage.setItem('formRateLimit', JSON.stringify(newState));
+            setStatus('rate-limit');
+            setTimeout(() => setStatus(''), 5000);
+            return;
+        }
+
+        setRateLimitState(newState);
+        localStorage.setItem('formRateLimit', JSON.stringify(newState));
+
+        // Валідація
+        const newErrors = validateFormData(formData);
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        setIsLoading(true);
+
         try {
+            // Перевірка наявності необхідних змінних середовища
+            if (!import.meta.env.VITE_EMAILJS_SERVICE_ID ||
+                !import.meta.env.VITE_EMAILJS_TEMPLATE_ID ||
+                !import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
+                throw new Error('Email service not configured');
+            }
+
             const result = await emailjs.sendForm(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -36,6 +88,7 @@ const Contact = () => {
             console.log('Email sent successfully:', result.text);
             setStatus('success');
 
+            // Очистити форму
             setFormData({
                 from_name: '',
                 from_email: '',
@@ -47,7 +100,7 @@ const Contact = () => {
             }, 5000);
 
         } catch (error) {
-            console.error('Failed to send email:', (error as { text?: string }).text);
+            console.error('Failed to send email:', error);
             setStatus('error');
 
             setTimeout(() => {
@@ -69,7 +122,7 @@ const Contact = () => {
                     <p>Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</p>
                 </div>
 
-                <form className="contact-form" ref={form} onSubmit={handleSubmit}>
+                <form className="contact-form" ref={form} onSubmit={handleSubmit} noValidate>
                     <div className="form-group">
                         <input
                             type="text"
@@ -77,9 +130,13 @@ const Contact = () => {
                             placeholder="Name"
                             value={formData.from_name}
                             onChange={handleInputChange}
-                            required
-                            className="form-input"
+                            disabled={isLoading}
+                            className={`form-input ${errors.from_name ? 'error' : ''}`}
+                            maxLength={100}
                         />
+                        {errors.from_name && (
+                            <span className="error-message">{errors.from_name}</span>
+                        )}
                     </div>
 
                     <div className="form-group">
@@ -89,9 +146,13 @@ const Contact = () => {
                             placeholder="Email"
                             value={formData.from_email}
                             onChange={handleInputChange}
-                            required
-                            className="form-input"
+                            disabled={isLoading}
+                            className={`form-input ${errors.from_email ? 'error' : ''}`}
+                            maxLength={254}
                         />
+                        {errors.from_email && (
+                            <span className="error-message">{errors.from_email}</span>
+                        )}
                     </div>
 
                     <div className="form-group">
@@ -100,10 +161,15 @@ const Contact = () => {
                             placeholder="Message"
                             value={formData.message}
                             onChange={handleInputChange}
-                            required
+                            disabled={isLoading}
                             rows={6}
-                            className="form-textarea"
+                            className={`form-textarea ${errors.message ? 'error' : ''}`}
+                            maxLength={5000}
                         />
+                        <span className="char-count">{formData.message.length}/5000</span>
+                        {errors.message && (
+                            <span className="error-message">{errors.message}</span>
+                        )}
                     </div>
 
                     {status === 'success' && (
@@ -118,10 +184,16 @@ const Contact = () => {
                         </div>
                     )}
 
+                    {status === 'rate-limit' && (
+                        <div className="status-message error">
+                            ⏱️ Too many attempts. Please wait {getRateLimitTimeRemaining(rateLimitState)}s before trying again.
+                        </div>
+                    )}
+
                     <button
                         type="submit"
                         className={`submit-btn ${isLoading ? 'loading' : ''}`}
-                        disabled={isLoading}
+                        disabled={isLoading || rateLimitState.count >= 10}
                     >
                         {isLoading ? (
                             <>
@@ -138,6 +210,8 @@ const Contact = () => {
                     <button
                         className="scroll-up-btn"
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        type="button"
+                        aria-label="Scroll to top"
                     >
                         ↑
                     </button>
