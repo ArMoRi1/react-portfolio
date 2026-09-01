@@ -6,7 +6,7 @@ const Projects = () => {
         {
             id: 1,
             title: "Solar System",
-            description: "It is Solar system model",
+            description: "Interactive 3D solar system visualization built with React and Three.js. Demonstrates advanced rendering techniques and real-time 3D graphics manipulation in a web environment.",
             githubLink: "https://github.com/ArMoRi1/react-solar-system",
             webLink : "https://armori1.github.io/react-solar-system/",
             image: `${import.meta.env.BASE_URL}project-images/solar-system.jpg`,
@@ -15,74 +15,38 @@ const Projects = () => {
         {
             id: 2,
             title: "Employees",
-            description: "Company employee accounting app for everyone`s usage",
+            description: "Full-featured employee management system enabling HR teams to track, organize, and manage company workforce data. Built with React for responsive, dynamic UI.",
             githubLink: "https://github.com/ArMoRi1/react-employees",
             webLink : "https://armori1.github.io/react-employees/",
             image: `${import.meta.env.BASE_URL}project-images/react-employees.jpg`,
-            technologies: ["ReactJS", "JavaScript", "SASS"]
+            technologies: ["ReactJS", "JavaScript", "CSS"]
         },
         {
             id: 3,
-            title: "Currency Conversion",
-            description: "It is a simple conversion app for self-usage",
-            githubLink: "https://github.com/ArMoRi1/react-currency-conversion",
-            webLink : "https://armori1.github.io/react-currency-conversion/",
-            image: `${import.meta.env.BASE_URL}project-images/currency-conversion.jpg`,
-            technologies: ["ReactJS", "JavaScript", "API"]
+            title: "Furniture Store",
+            description: "E-commerce platform for furniture retail. My first professional project as a developer—full-stack implementation with product catalog, shopping cart, and order management.",
+            githubLink: "https://github.com/ArMoRi1/furniture.local",
+            webLink : "https://github.com/ArMoRi1/furniture.local",
+            image: `${import.meta.env.BASE_URL}project-images/Furniture-Store.jpg`,
+            technologies: ["JavaScript", "PHP", "MySQL", "SQL"]
         },
         {
             id: 4,
-            title: "Restraunt",
-            description: "Restaurant advertising website",
-            githubLink: "https://github.com/ArMoRi1/Restraunt",
-            webLink : "https://armori1.github.io/Restraunt/",
-            image: `${import.meta.env.BASE_URL}project-images/Restraunt.jpg`,
-            technologies: ["JavaScript", "HTML", "CSS"]
+            title: "Smart Garbage",
+            description: "IoT-based waste management system concept. Presented at an All-Ukrainian startup competition—demonstrates full-stack development combining hardware concepts with web technologies.",
+            githubLink: "https://github.com/ArMoRi1/Smart_garbage",
+            webLink : "https://github.com/ArMoRi1/Smart_garbage",
+            image: `${import.meta.env.BASE_URL}project-images/Smart_garbage.jpg`,
+            technologies: ["JavaScript", "API", "PHP", "MySQL"]
         },
         {
             id: 5,
-            title: "Furniture Store",
-            description: "It is my first store app for my first job as a programmer",
-            githubLink: "https://github.com/ArMoRi1/furniture.local",
-            webLink : "https://furniture-comfort.is-great.net/",
-            image: `${import.meta.env.BASE_URL}project-images/Furniture-Store.jpg`,
-            technologies: ["JavaScript", "PHP", "phpMyAdmin", "SQL"]
-        },
-        {
-            id: 6,
-            title: "Smart Garbage",
-            description: "It was an idea of a start-up what was presented on a All-Ukrainian competition",
-            githubLink: "https://github.com/ArMoRi1/Smart_garbage",
-            webLink : "https://smart-trash.great-site.net/",
-            image: `${import.meta.env.BASE_URL}project-images/Smart_garbage.jpg`,
-            technologies: ["JavaScript", "API", "PHP", "SQL"]
-        },
-        {
-            id: 7,
-            title: "TravelIn",
-            description: "The simplest site about travel tours",
-            githubLink: "https://github.com/ArMoRi1/travel.local",
-            webLink : "https://travelin.great-site.net/",
-            image: `${import.meta.env.BASE_URL}project-images/TravelIn.jpg`,
-            technologies: ["JavaScript", "PHP", "SQL", "phpMyAdmin"]
-        },
-        {
-            id: 8,
             title: "ThreeJS Earth Model",
-            description: "Basic ThreeJS project that represents planet Earth",
+            description: "Advanced 3D Earth visualization using Three.js with realistic rendering. Showcases proficiency in WebGL, 3D transformations, and complex graphics programming.",
             githubLink: "https://github.com/ArMoRi1/real-earth/",
             webLink : "https://armori1.github.io/real-earth/",
             image: `${import.meta.env.BASE_URL}project-images/real-earth.jpg`,
             technologies: ["JavaScript", "ThreeJS", "CSS"]
-        },
-        {
-            id: 9,
-            title: "Translator",
-            description: "Simple translator app",
-            githubLink: "https://github.com/ArMoRi1/TranslateRT",
-            webLink : "https://armori1.github.io/TranslateRT/",
-            image: `${import.meta.env.BASE_URL}project-images/TranslateRT.jpg`,
-            technologies: ["JavaScript", "API", "CSS"]
         }
     ];
 

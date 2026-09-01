@@ -27,10 +27,10 @@ const Contact = () => {
 
         try {
             const result = await emailjs.sendForm(
-                'service_ArtPortfolio',
-                'template_ArtPortfolio',
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 form.current!,
-                '4oz-FDBfb7C1j37cy'
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             );
 
             console.log('Email sent successfully:', result.text);
