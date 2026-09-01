@@ -51,59 +51,20 @@ const About = () => {
                     {/* Права частина - технології */}
                     <div className="about-right">
                         <div className="tech-grid">
-                            {/* Перша колонка - 4 елементи */}
-                            <div className="tech-column col-4">
-                                {technologies.slice(0, 4).map((tech, index) => (
-                                    <div
-                                        key={tech.name}
-                                        className="tech-item"
-                                        style={{ animationDelay: `${index * 0.1}s` }}
-                                    >
-                                        <img
-                                            src={`${import.meta.env.BASE_URL}tech-icons/${tech.name.toLowerCase()}.png`}
-                                            alt={tech.name}
-                                            className="tech-icon"
-                                        />
-                                        <span className="tech-label">{tech.name}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Друга колонка - 4 елементи */}
-                            <div className="tech-column col-4">
-                                {technologies.slice(4, 8).map((tech, index) => (
-                                    <div
-                                        key={tech.name}
-                                        className="tech-item"
-                                        style={{ animationDelay: `${(index + 4) * 0.1}s` }}
-                                    >
-                                        <img
-                                            src={`${import.meta.env.BASE_URL}tech-icons/${tech.name.toLowerCase()}.png`}
-                                            alt={tech.name}
-                                            className="tech-icon"
-                                        />
-                                        <span className="tech-label">{tech.name}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Третя колонка - 4 елементи */}
-                            <div className="tech-column col-4">
-                                {technologies.slice(8, 12).map((tech, index) => (
-                                    <div
-                                        key={tech.name}
-                                        className="tech-item"
-                                        style={{ animationDelay: `${(index + 8) * 0.1}s` }}
-                                    >
-                                        <img
-                                            src={`${import.meta.env.BASE_URL}tech-icons/${tech.name.toLowerCase()}.png`}
-                                            alt={tech.name}
-                                            className="tech-icon"
-                                        />
-                                        <span className="tech-label">{tech.name}</span>
-                                    </div>
-                                ))}
-                            </div>
+                            {technologies.map((tech, index) => (
+                                <div
+                                    key={tech.name}
+                                    className="tech-item"
+                                    style={{ animationDelay: `${index * 0.1}s` }}
+                                >
+                                    <img
+                                        src={`${import.meta.env.BASE_URL}tech-icons/${tech.name.toLowerCase()}.png`}
+                                        alt={tech.name}
+                                        className="tech-icon"
+                                    />
+                                    <span className="tech-label">{tech.name}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

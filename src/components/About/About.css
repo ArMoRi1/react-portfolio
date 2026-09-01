@@ -1,12 +1,10 @@
-/* About.css */
-
+/* About Section */
 .about-section {
     background-color: #0f0f0f;
     color: #ffffff;
-    padding: 0 1.5rem 4rem 1.5rem;
+    padding: 3rem 2rem;
     font-family: 'Segoe UI', sans-serif;
     position: relative;
-    overflow: hidden;
 }
 
 .about-title h2 {
@@ -14,8 +12,9 @@
     text-align: center;
     color: #fff;
     font-weight: 800;
+    margin-bottom: 2rem;
     position: relative;
-    display: inline-block;
+    padding-bottom: 1rem;
 }
 
 .about-title h2::after {
@@ -25,7 +24,7 @@
     background: #ff4d5a;
     position: absolute;
     left: 50%;
-    bottom: -10px;
+    bottom: 0;
     transform: translateX(-50%);
     border-radius: 5px;
 }
@@ -33,23 +32,22 @@
 .about-container {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
 }
 
 .about-content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
     max-width: 1200px;
     width: 100%;
-    gap: 2rem;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .about-left {
-    flex: 1 1 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
 }
 
 .profile-avatar {
@@ -60,7 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    flex-shrink: 0;
 }
 
 .avatar-body {
@@ -68,19 +66,13 @@
     height: 240px;
     border: 3px solid #0f0f0f;
     border-radius: 50%;
-    background: transparent;
-    position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .avatar-body img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
 }
 
 .about-description {
@@ -88,77 +80,68 @@
     line-height: 1.6;
     font-size: 1rem;
     color: #e0e0e0;
-    max-width: 500px;
 }
 
 .about-right {
-    flex: 1 1 45%;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
+/* Tech Grid - Desktop (3 columns) */
 .tech-grid {
-    display: flex;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 2rem;
     justify-content: center;
-    /*align-items: flex-end;*/
 }
 
 .tech-column {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
-}
-
-.tech-column.col-3 {
-    /* Перша і третя колонки по 3 елементи - опускаємо їх */
-    margin-top: 70px;
-}
-
-.tech-column.col-4 {
-    /* Друга колонка по 4 елементи - залишається зверху */
+    gap: 1.5rem;
 }
 
 .tech-item {
-    border: 2px solid;
-    border-image: linear-gradient(135deg, #61dafb, #ff4d5a) 1;
-    padding: 0.8rem;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ff4d5a;
     border-radius: 15%;
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 1px;
     background-color: #1a1a1a;
-    transition: transform 0.3s ease, background 0.3s ease;
-    animation: fadeInUp 0.5s ease forwards;
-    opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 100px;
+    gap: 0.4rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
 }
+
+.tech-item:nth-child(1) { animation-delay: 0s; }
+.tech-item:nth-child(2) { animation-delay: 0.1s; }
+.tech-item:nth-child(3) { animation-delay: 0.2s; }
+.tech-item:nth-child(4) { animation-delay: 0.3s; }
 
 .tech-item:hover {
     transform: translateY(-5px);
-    background: #252525;
+    background-color: #252525;
+    border-color: #61dafb;
 }
 
 .tech-icon {
-    width: 65px;
-    height: 65px;
-    margin-bottom: 0.3rem;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 
 .tech-label {
-    display: block;
-    color: #fff;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.5px;
 }
 
-/* Анімації */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -170,75 +153,126 @@
     }
 }
 
-/* Respawn */
+/* Tablet / Medium screens (768px and below) */
 @media (max-width: 768px) {
     .about-section {
-        padding: 0 1rem 2rem 1rem;
-        overflow: visible;
+        padding: 2rem 1.5rem;
+    }
+
+    .about-title h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
 
     .about-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .about-left {
-        flex: 1 1 100%;
         width: 100%;
     }
 
     .about-right {
-        flex: 1 1 100%;
         width: 100%;
     }
 
     .profile-avatar {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
     }
 
     .avatar-body {
-        width: 170px;
-        height: 170px;
+        width: 180px;
+        height: 180px;
     }
 
     .about-description {
-        max-width: 100%;
         font-size: 0.95rem;
+        line-height: 1.5;
+        max-width: 100%;
     }
 
+    /* 2 columns for tech grid on tablet */
     .tech-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 1.2rem;
-        align-items: center;
-        width: 100%;
-    }
-
-    .tech-column {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-        justify-content: center;
-        width: 100%;
-        max-width: 220px;
+        grid-template-columns: repeat(2, 120px);
+        gap: 1.5rem;
+        max-width: 100%;
     }
 
     .tech-item {
-        flex: 0 1 90px;
-        width: 90px;
-        height: 90px;
-        padding: 0.6rem;
+        width: 120px;
+        height: 120px;
     }
 
     .tech-icon {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
     }
 
     .tech-label {
         font-size: 0.7rem;
+    }
+}
+
+/* Small phones (460px and below) */
+@media (max-width: 460px) {
+    .about-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .about-title h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-title h2::after {
+        width: 50%;
+        height: 5px;
+    }
+
+    .about-left {
+        gap: 1.5rem;
+    }
+
+    .profile-avatar {
+        width: 160px;
+        height: 160px;
+    }
+
+    .avatar-body {
+        width: 135px;
+        height: 135px;
+        border: 2px solid #0f0f0f;
+    }
+
+    .about-description {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    /* 2 columns, bigger items for small phones */
+    .tech-grid {
+        grid-template-columns: repeat(2, 110px);
+        gap: 1rem;
+    }
+
+    .tech-column {
+        gap: 1rem;
+    }
+
+    .tech-item {
+        width: 110px;
+        height: 110px;
+        border: 1.5px solid #ff4d5a;
+    }
+
+    .tech-icon {
+        width: 65px;
+        height: 65px;
+    }
+
+    .tech-label {
+        font-size: 0.65rem;
     }
 }
