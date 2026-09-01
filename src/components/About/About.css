@@ -2,7 +2,7 @@
 .about-section {
     background-color: #0f0f0f;
     color: #ffffff;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     font-family: 'Segoe UI', sans-serif;
     position: relative;
 }
@@ -12,7 +12,7 @@
     text-align: center;
     color: #fff;
     font-weight: 800;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     position: relative;
     padding-bottom: 1rem;
 }
@@ -37,7 +37,7 @@
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
     max-width: 1200px;
     width: 100%;
     align-items: center;
@@ -150,6 +150,54 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Large screens (1024px and below) */
+@media (max-width: 1024px) {
+    .about-section {
+        padding: 3.5rem 2rem;
+    }
+
+    .about-title h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-content {
+        gap: 3.5rem;
+    }
+
+    .profile-avatar {
+        width: 250px;
+        height: 250px;
+    }
+
+    .avatar-body {
+        width: 215px;
+        height: 215px;
+    }
+
+    .about-description {
+        font-size: 0.98rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(3, 90px);
+        gap: 1.8rem;
+    }
+
+    .tech-item {
+        width: 90px;
+        height: 90px;
+    }
+
+    .tech-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .tech-label {
+        font-size: 0.7rem;
     }
 }
 

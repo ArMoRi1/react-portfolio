@@ -3,11 +3,11 @@
 .contact-section {
     background-color: #0f0f0f;
     color: #ffffff;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     font-family: 'Segoe UI', sans-serif;
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,8 +26,9 @@
     color: #fff;
     font-weight: 800;
     position: relative;
-    display: inline-block;
-    margin-bottom: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
 }
 
 .contact-title h2::after {
@@ -37,7 +38,7 @@
     background: #ff4d5a;
     position: absolute;
     left: 50%;
-    bottom: -10px;
+    bottom: 0;
     transform: translateX(-50%);
     border-radius: 5px;
 }
@@ -148,11 +149,17 @@
 /* Респонсивний дизайн */
 @media (max-width: 768px) {
     .contact-section {
-        padding: 3rem 1rem;
+        padding: 2rem 1.5rem;
+        min-height: auto;
+    }
+
+    .contact-container {
+        max-width: 100%;
     }
 
     .contact-title h2 {
         font-size: 2rem;
+        margin-bottom: 0.8rem;
     }
 
     .contact-subtitle p {
@@ -163,18 +170,57 @@
     .form-textarea {
         padding: 0.8rem 1rem;
     }
+
+    .submit-btn {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .contact-container {
-        max-width: 100%;
+    .contact-section {
+        padding: 1.5rem 1rem;
+        min-height: auto;
     }
 
     .contact-title h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .contact-title h2::after {
+        width: 50%;
+        height: 5px;
+    }
+
+    .contact-subtitle p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .form-textarea {
+        min-height: 100px;
     }
 
     .submit-btn {
         width: 100%;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .scroll-up {
+        margin-top: 2rem;
+    }
+
+    .scroll-up-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
     }
 }
