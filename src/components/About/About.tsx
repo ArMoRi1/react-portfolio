@@ -4,20 +4,17 @@ import './About.css';
 const About = () => {
     const technologies = [
         { name: 'HTML', color: '#E34F26' },
-        { name: 'JS', color: '#F7DF1E' },
         { name: 'CSS', color: '#1572B6' },
-        { name: 'TAILWIND', color: '#06B6D4' },
+        { name: 'JS', color: '#F7DF1E' },
         { name: 'REACT', color: '#61DAFB' },
         { name: 'TYPESCRIPT', color: '#3178C6' },
+        { name: 'TAILWIND', color: '#06B6D4' },
         { name: 'GIT', color: '#F05032' },
-        { name: 'THREEJS', color: '#000000' },
-        { name: 'MYSQL', color: '#4479A1' },
-        { name: 'POSTGRES', color: '#336791' },
+        { name: 'NODEJS', color: '#339933' },
         { name: 'PYTHON', color: '#3776AB' },
         { name: 'DJANGO', color: '#092E20' },
-        { name: 'DRF', color: '#A30000' },
-        { name: 'NGINX', color: '#009639' },
-        { name: 'GITHUBACTIONS', color: '#2088FF' }
+        { name: 'POSTGRES', color: '#336791' },
+        { name: 'CLAUDE', color: '#2563EB' }
     ];
 
     return (
@@ -56,7 +53,7 @@ const About = () => {
                         <div className="tech-grid">
                             {/* Перша колонка - 4 елементи */}
                             <div className="tech-column col-4">
-                                {technologies.slice(0, 5).map((tech, index) => (
+                                {technologies.slice(0, 4).map((tech, index) => (
                                     <div
                                         key={tech.name}
                                         className="tech-item"
@@ -74,11 +71,11 @@ const About = () => {
 
                             {/* Друга колонка - 4 елементи */}
                             <div className="tech-column col-4">
-                                {technologies.slice(5, 10).map((tech, index) => (
+                                {technologies.slice(4, 8).map((tech, index) => (
                                     <div
                                         key={tech.name}
                                         className="tech-item"
-                                        style={{ animationDelay: `${(index + 3) * 0.1}s` }}
+                                        style={{ animationDelay: `${(index + 4) * 0.1}s` }}
                                     >
                                         <img
                                             src={`${import.meta.env.BASE_URL}tech-icons/${tech.name.toLowerCase()}.png`}
@@ -92,11 +89,11 @@ const About = () => {
 
                             {/* Третя колонка - 4 елементи */}
                             <div className="tech-column col-4">
-                                {technologies.slice(10, 15).map((tech, index) => (
+                                {technologies.slice(8, 12).map((tech, index) => (
                                     <div
                                         key={tech.name}
                                         className="tech-item"
-                                        style={{ animationDelay: `${(index + 7) * 0.1}s` }}
+                                        style={{ animationDelay: `${(index + 8) * 0.1}s` }}
                                     >
                                         <img
                                             src={`${import.meta.env.BASE_URL}tech-icons/${tech.name.toLowerCase()}.png`}
