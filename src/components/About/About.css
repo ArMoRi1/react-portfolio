@@ -41,7 +41,7 @@
     flex-wrap: wrap;
     max-width: 1200px;
     width: 100%;
-    gap: 3rem;
+    gap: 2rem;
     justify-content: space-between;
 }
 
