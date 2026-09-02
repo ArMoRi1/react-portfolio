@@ -7,17 +7,17 @@
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 0;
-    transition: all 0.3s ease;
+    transition: all var(--transition-default);
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: var(--nav-height);
 }
 
 .nav-menu {
@@ -31,13 +31,13 @@
 
 .nav-item {
     margin: 0;
-    height: 60px;
+    height: var(--nav-height);
     flex: 1;
     position: relative;
 }
 
 .nav-link {
-    color: #ffffff;
+    color: var(--color-text-primary);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -46,7 +46,7 @@
     cursor: pointer;
     padding: 0;
     border-radius: 0;
-    transition: all 0.3s ease;
+    transition: all var(--transition-default);
     font-family: inherit;
     height: 100%;
     width: 100%;
@@ -67,7 +67,7 @@
     bottom: 0;
     background-color: rgba(255, 255, 255, 0.1);
     transform: scaleX(0);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-default);
     transform-origin: center;
 }
 
@@ -76,14 +76,14 @@
 }
 
 .nav-link:hover {
-    color: #ffffff;
+    color: var(--color-text-primary);
     transform: translateY(-1px);
 }
 
 /* Активний стан */
 .nav-link.active {
-    color: #ffffff;
-    background-color: #ff6b6b;
+    color: var(--color-text-primary);
+    background-color: var(--color-accent-secondary);
     transform: none;
     box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
 }
@@ -95,7 +95,7 @@
 
 /* Фокус для доступності */
 .nav-link:focus {
-    outline: 2px solid #ffffff;
+    outline: 2px solid var(--color-text-primary);
     outline-offset: 2px;
 }
 
@@ -142,13 +142,3 @@
     .nav-item:nth-child(4) { animation-delay: 0.4s; }
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}

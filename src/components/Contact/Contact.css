@@ -1,9 +1,9 @@
 /* Contact.css */
 
 .contact-section {
-    background-color: #0f0f0f;
-    color: #ffffff;
-    padding: 2rem 2rem;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    padding: var(--spacing-lg) var(--spacing-lg);
     font-family: 'Segoe UI', sans-serif;
     position: relative;
     overflow: hidden;
@@ -24,7 +24,7 @@
 .contact-title h2 {
     font-size: 2.5rem;
     text-align: center;
-    color: #fff;
+    color: var(--color-text-primary);
     font-weight: 800;
     position: relative;
     display: block;
@@ -36,7 +36,7 @@
     content: '';
     width: 60%;
     height: 8px;
-    background: #ff4d5a;
+    background: var(--color-accent-primary);
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -51,7 +51,7 @@
 .contact-subtitle p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #e0e0e0;
+    color: var(--color-text-secondary);
     max-width: 500px;
     margin: 0 auto;
 }
@@ -67,39 +67,35 @@
     position: relative;
 }
 
-.form-group {
-    position: relative;
-}
-
 .form-input,
 .form-textarea {
     width: 100%;
     padding: 1rem 1.2rem;
-    background: #1a1a1a;
-    border: 2px solid #333;
+    background: var(--color-bg-secondary);
+    border: 2px solid var(--color-border-light);
     border-radius: 8px;
-    color: #fff;
+    color: var(--color-text-primary);
     font-size: 1rem;
     font-family: inherit;
-    transition: all 0.3s ease;
+    transition: all var(--transition-default);
     outline: none;
     box-sizing: border-box;
 }
 
 .form-input.error,
 .form-textarea.error {
-    border-color: #ff4d5a;
+    border-color: var(--color-accent-primary);
     background: rgba(255, 77, 90, 0.05);
 }
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-    color: #888;
+    color: var(--color-text-hint);
 }
 
 .form-input:focus,
 .form-textarea:focus {
-    border-color: #ff4d5a;
+    border-color: var(--color-accent-primary);
     box-shadow: 0 0 0 3px rgba(255, 77, 90, 0.1);
 }
 
@@ -117,7 +113,7 @@
 
 .error-message {
     display: block;
-    color: #ff4d5a;
+    color: var(--color-accent-primary);
     font-size: 0.85rem;
     margin-top: 0.4rem;
     font-weight: 500;
@@ -126,7 +122,7 @@
 .char-count {
     display: block;
     text-align: right;
-    color: #888;
+    color: var(--color-text-muted);
     font-size: 0.8rem;
     margin-top: 0.3rem;
 }
@@ -134,14 +130,14 @@
 .submit-btn {
     padding: 1rem 2rem;
     background: transparent;
-    border: 2px solid #ff4d5a;
-    color: #ff4d5a;
+    border: 2px solid var(--color-accent-primary);
+    color: var(--color-accent-primary);
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 1px;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-default);
     text-transform: uppercase;
     margin: 1rem auto 0;
     width: fit-content;
@@ -151,7 +147,7 @@
 }
 
 .submit-btn:hover:not(:disabled) {
-    background: #ff4d5a;
+    background: var(--color-accent-primary);
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(255, 77, 90, 0.3);
@@ -166,15 +162,9 @@
     width: 16px;
     height: 16px;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    border-top-color: #fff;
+    border-top-color: var(--color-text-primary);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 .status-message {
@@ -185,27 +175,16 @@
     animation: slideDown 0.3s ease;
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .status-message.success {
     background: rgba(76, 175, 80, 0.15);
     border: 1px solid rgba(76, 175, 80, 0.3);
-    color: #4caf50;
+    color: var(--color-success);
 }
 
 .status-message.error {
     background: rgba(255, 77, 90, 0.15);
     border: 1px solid rgba(255, 77, 90, 0.3);
-    color: #ff4d5a;
+    color: var(--color-accent-primary);
 }
 
 .scroll-up {
@@ -215,14 +194,14 @@
 .scroll-up-btn {
     width: 50px;
     height: 50px;
-    background: #ff4d5a;
+    background: var(--color-accent-primary);
     border: none;
     border-radius: 8px;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-default);
     display: flex;
     align-items: center;
     justify-content: center;
