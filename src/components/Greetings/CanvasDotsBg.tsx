@@ -27,8 +27,7 @@ const CanvasDotsBg = () => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        const cv = canvas as HTMLCanvasElement;
-        const ctx = cv.getContext('2d')!;
+        const ctx = canvas.getContext('2d')!;
         const colorDot = [
             'rgb(81, 162, 233)',
             'rgb(81, 162, 233)',
@@ -46,8 +45,8 @@ const CanvasDotsBg = () => {
             colour: string;
 
             constructor() {
-                this.x = Math.random() * cv.width;
-                this.y = Math.random() * cv.height;
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
                 this.vx = -0.5 + Math.random();
                 this.vy = -0.5 + Math.random();
                 this.radius = Math.random() * 1.5;
@@ -57,12 +56,6 @@ const CanvasDotsBg = () => {
             create() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-                const top = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) - (document.documentElement.clientTop || 0);
-                const dotDistance = Math.sqrt(
-                    Math.pow(this.x - mousePositionRef.current.x, 2) +
-                    Math.pow(this.y - mousePositionRef.current.y + top, 2)
-                );
-                void dotDistance;
                 ctx.fillStyle = this.colour;
                 ctx.fill();
             }
@@ -72,9 +65,9 @@ const CanvasDotsBg = () => {
                     const dot = dotsRef.current.array[i];
                     if (!dot) continue;
 
-                    if (dot.y < 0 || dot.y > cv.height) {
+                    if (dot.y < 0 || dot.y > canvas.height) {
                         dot.vy = -dot.vy;
-                    } else if (dot.x < 0 || dot.x > cv.width) {
+                    } else if (dot.x < 0 || dot.x > canvas.width) {
                         dot.vx = -dot.vx;
                     }
                     dot.x += dot.vx;
@@ -124,15 +117,15 @@ const CanvasDotsBg = () => {
         }
 
         const setupCanvas = () => {
-            cv.width = document.body.scrollWidth || window.innerWidth;
-            cv.height = window.innerHeight;
-            cv.style.display = 'block';
+            canvas.width = document.body.scrollWidth || window.innerWidth;
+            canvas.height = window.innerHeight;
+            canvas.style.display = 'block';
             ctx.lineWidth = 0.3;
             ctx.strokeStyle = color;
 
             mousePositionRef.current = {
-                x: (30 * cv.width) / 100,
-                y: (30 * cv.height) / 100,
+                x: (30 * canvas.width) / 100,
+                y: (30 * canvas.height) / 100,
             };
 
             const windowSize = window.innerWidth;
@@ -153,7 +146,7 @@ const CanvasDotsBg = () => {
         };
 
         function createDots() {
-            ctx.clearRect(0, 0, cv.width, cv.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             if (dotsRef.current.array.length === 0) {
                 for (let i = 0; i < dotsRef.current.nb; i++) {

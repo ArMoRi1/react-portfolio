@@ -3,18 +3,18 @@ import './About.css';
 
 const About = () => {
     const technologies = [
-        { name: 'HTML', color: '#E34F26' },
-        { name: 'CSS', color: '#1572B6' },
-        { name: 'JS', color: '#F7DF1E' },
-        { name: 'REACT', color: '#61DAFB' },
-        { name: 'TYPESCRIPT', color: '#3178C6' },
-        { name: 'TAILWIND', color: '#06B6D4' },
-        { name: 'GIT', color: '#F05032' },
-        { name: 'NODEJS', color: '#339933' },
-        { name: 'PYTHON', color: '#3776AB' },
-        { name: 'DJANGO', color: '#092E20' },
-        { name: 'POSTGRES', color: '#336791' },
-        { name: 'CLAUDE', color: '#2563EB' }
+        { name: 'HTML' },
+        { name: 'CSS' },
+        { name: 'JS' },
+        { name: 'REACT' },
+        { name: 'TYPESCRIPT' },
+        { name: 'TAILWIND' },
+        { name: 'GIT' },
+        { name: 'NODEJS' },
+        { name: 'PYTHON' },
+        { name: 'DJANGO' },
+        { name: 'POSTGRES' },
+        { name: 'CLAUDE' }
     ];
 
     return (

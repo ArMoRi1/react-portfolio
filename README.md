@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# React Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React portfolio built with Vite, TypeScript, and deployed on GitHub Pages.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+- **React 19** - Latest React with TypeScript
+- **Vite** - Lightning-fast frontend build tool
+- **TypeScript** - Type-safe JavaScript
+- **CSS3** - Modern styling with CSS variables and animations
+- **EmailJS** - Contact form backend
+- **GitHub Pages** - Deployment
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (v16+)
+- npm or yarn
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+### Development
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run dev
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Runs the app in development mode at http://localhost:5173 (Vite default).
+The page will hot-reload when you make changes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Build
 
-### `npm run eject`
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Builds the app for production to the `dist` folder.
+TypeScript is checked before building (`tsc && vite build`).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Preview
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run preview
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Preview the production build locally before deploying.
 
-## Learn More
+### Deploy to GitHub Pages
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run deploy
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Automatically builds and deploys to GitHub Pages using the `gh-pages` package.
 
-### Code Splitting
+## Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Create a `.env.local` file in the root directory with:
 
-### Analyzing the Bundle Size
+```env
+VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+See `.env.example` for reference.
 
-### Making a Progressive Web App
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+src/
+├── components/
+│   ├── Navigation/
+│   ├── Greetings/
+│   ├── About/
+│   ├── Projects/
+│   ├── Contact/
+│   └── Footer/
+├── Utils/
+│   ├── smoothScroll.ts
+│   └── formSecurity.ts
+├── App.tsx
+├── main.tsx
+└── index.css (Global styles & CSS variables)
+```
 
-### Advanced Configuration
+## Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The project uses CSS modules with global CSS variables in `src/index.css`:
 
-### Deployment
+- **Color System**: Primary, secondary, accent colors via CSS custom properties
+- **Spacing Scale**: Standardized spacing values (xs, sm, md, lg, xl, 2xl)
+- **Animations**: Global keyframes for smooth transitions
+- **Responsive**: Media queries at 1024px (tablet) and 480px (mobile)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### CSS Variables
 
-### `npm run build` fails to minify
+Access colors, spacing, and layout constants:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```css
+color: var(--color-accent-primary);
+padding: var(--spacing-lg);
+max-width: var(--max-width);
+```
+
+## Features
+
+- Smooth scroll navigation with section highlighting
+- Responsive design (desktop, tablet, mobile)
+- Contact form with validation and rate limiting
+- Tech stack showcase with professional icons
+- Animated project portfolio
+- Modern UI with gradient accents
+- Security: EmailJS credentials in environment variables
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+This project is open source.
+
+## Contact
+
+For inquiries, use the contact form on the portfolio or reach out via GitHub.
