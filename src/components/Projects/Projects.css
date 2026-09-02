@@ -52,10 +52,9 @@
 
 .project-card {
     background: var(--color-bg-secondary);
-    border: 2px solid;
-    border-image: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-primary)) 1;
+    border: 2px solid var(--color-accent-cyan);
     overflow: hidden;
-    transition: transform var(--transition-default), box-shadow var(--transition-default);
+    transition: transform var(--transition-default), box-shadow var(--transition-default), border-color var(--transition-default);
     animation: fadeInUp 0.6s ease forwards;
     opacity: 0;
     cursor: pointer;
@@ -64,6 +63,7 @@
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-accent-primary);
 }
 
 .project-image {
@@ -142,9 +142,9 @@
 
 .project-technologies {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 15%;
+    gap: 0.5rem;
     margin-bottom: 1rem;
 }
 
@@ -158,12 +158,6 @@
     font-size: 0.8rem;
     font-weight: 500;
     border: 1px solid rgba(97, 218, 251, 0.3);
-}
-
-.project-github {
-    color: #888;
-    font-size: 0.9rem;
-    word-break: break-all;
 }
 
 /* Респонсивний дизайн */
